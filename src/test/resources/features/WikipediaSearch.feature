@@ -6,3 +6,5 @@ Feature: Wikipedia search functionality
     Given  user is on the wikipedia home page
     When user types "Steve Jobs" in the wikipedia search box
     Then user should see "Steve Jobs" in the wiki  title
+
+
