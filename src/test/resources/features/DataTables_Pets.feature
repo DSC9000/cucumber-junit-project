@@ -11,7 +11,7 @@ Feature:  Cucumber Data Tables implementation practices pets
     |Convict Cichlid|
     |Boesemani Rainbow|
     |Kuhli Loach |
-@wip
+
     Scenario: Officer reads data about driver
       Then officer is able to see any data about driver
       |name|Jane|
