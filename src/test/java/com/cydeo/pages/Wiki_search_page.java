@@ -11,4 +11,8 @@ public class Wiki_search_page {
     }
     @FindBy(id="searchInput")
     public WebElement searchBox;
+    @FindBy(id="firstHeading")
+    public WebElement header;
+    @FindBy(xpath = "//div[@class='fn']")
+    public WebElement imageHeader;
 }

@@ -6,6 +6,7 @@ import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
 public class Wiki_step_defs {
@@ -26,5 +27,18 @@ public class Wiki_step_defs {
     public void user_should_see_in_the_wiki_title(String expectedTitle) {
 
         BrowserUtils.verifyTitleContains(expectedTitle);
+    }
+
+    @Then("user should see {string} in the main  header")
+    public void userShouldSeeInTheMainHeader( String expectedText) {
+        String actualHeader =wikiSearchPage.header.getText();
+        Assert.assertEquals(actualHeader,expectedText);
+
+    }
+
+    @Then("user should see {string} in the image header")
+    public void userShouldSeeInTheImageHeader( String expectedHeaderText) {
+        String actualImageHeader =wikiSearchPage.imageHeader.getText();
+        Assert.assertEquals(actualImageHeader,expectedHeaderText);
     }
 }

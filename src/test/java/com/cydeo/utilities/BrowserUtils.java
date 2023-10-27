@@ -5,9 +5,12 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class BrowserUtils {
@@ -78,5 +81,16 @@ public class BrowserUtils {
     public static void scrollDown(int pixels) {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("window.scrollBy(0, "+ pixels +")");
+    }
+    public static List<String>dropdownOptions_as_String(WebElement dropdownElement){
+        Select month =new Select(dropdownElement);
+        List<WebElement>actMonth_as_Webelement=month.getOptions();
+        List<String>actMonth_as_String=new ArrayList<>();
+
+        for (WebElement eachMonth : actMonth_as_Webelement) {
+            actMonth_as_String.add(eachMonth.getText());
+
+        }
+        return actMonth_as_String;
     }
 }
